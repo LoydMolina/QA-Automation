@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Automation
+{% endblock %}
+{% block content %}
+    <section>
+    <H1>Automation</H1>
+
+    {% for post in post %}
+        <article class = "post">
+            <h2>
+                <a href="{% url 'post:page' slug=post.slug %}">
+                {{ post.title }}
+                </a>
+            </h2>
+            <p>{{ post.date }}</p>
+            <p>{{ post.body }}</p>
+        </article>
+    {% endfor %}
+    </section>
+{% endblock %}
